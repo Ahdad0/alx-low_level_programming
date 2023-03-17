@@ -3,7 +3,7 @@
  * main - print all alpphabet expect q and e
  * Return: 0 (success)
  */
-int main(void) 
+int main(void)
 {
 	int i;
 
