@@ -1,5 +1,6 @@
 #include <stdio.h>
-int main(void) /**adding void to not return the value**/
+/* main */
+int main(void)
 {
 	char *s = "\"Programming is like building a multilingual puzzle";
 
