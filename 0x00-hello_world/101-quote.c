@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main - function output their input 
+ * main - function output their input
  * Return: 0 (Success)
  */
 int main(void)
