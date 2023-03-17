@@ -1,7 +1,8 @@
-#include <stdio.h> 
-int main(void) /*the main function doesn't take any of the arguments*/
+#include <stdio.h>
+/* main include void so the funczion doesn't take an argument*/    
+int main(void)
 {
 	char *s = "\"Programming is like building a multilingual puzzle\n";
-	puts(s);   /* print *s of the variable */
-	return (0); 
+	puts(s);
+	return (0);
 }
