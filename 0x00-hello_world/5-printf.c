@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main -print all output 
- * Return : 0 (success)
+ * main - print all output function
+ * Return : 0 (Success)
  */
 int main(void)
 {
