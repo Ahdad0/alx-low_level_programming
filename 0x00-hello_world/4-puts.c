@@ -1,6 +1,5 @@
 #include <stdio.h>
-/* main */
-int main(void)
+int main(void) /* main.c */
 {
 	char *s = "\"Programming is like building a multilingual puzzle";
 
