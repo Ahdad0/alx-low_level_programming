@@ -1,8 +1,7 @@
 #include <stdio.h>
-/* main include void so the funczion doesn't take an argument*/    
-int main(void)
+int main(void) /*adding void to not return the value*/
 {
 	char *s = "\"Programming is like building a multilingual puzzle\n";
 	puts(s);
-	return (0);
+	return 0;
 }
