@@ -2,7 +2,7 @@
 /**
  * print_alphabet_x10 - output alphabet in lowercase 10 times
  * Return: 0 (success)
- **/
+ */
 void print_alphabet_x10(void)
 {
 	int i = 10;
@@ -13,7 +13,7 @@ void print_alphabet_x10(void)
 		{
 			_putchar(c);
 		}
+		putchar('\n');
+		i--;
 	}
-	_putchar('\n');
 }
-
