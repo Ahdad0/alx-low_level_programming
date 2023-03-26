@@ -22,6 +22,10 @@ void print_to_98(int n)
 				printf("%d, ", a);
 			
 			{
+			else if (n == 98)
+			{
+				printf("%d\n", a);
+			}
 		}
 	}
 	else if (n < 98)
@@ -32,6 +36,10 @@ void print_to_98(int n)
 			{
 				printf("%d, ", b);
 			{
+			else if (n == 98)
+			{
+				printf("%d\n", b);
+			}
 		}
 	}
 }
