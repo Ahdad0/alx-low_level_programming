@@ -17,24 +17,21 @@ void print_to_98(int n)
 	{
 		for (n = a; a >= 98; a--)
 		{
-			printf("%d", a);
 			if (n != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
-			}
+				printf("%d, ", a);
+			
+			{
 		}
 	}
 	else if (n < 98)
 	{
 		for (n = b; b <= 98; b++)
 		{
-			printf("%d", b);
 			if (n != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
-			}
+				printf("%d, ", b);
+			{
 		}
 	}
 }
