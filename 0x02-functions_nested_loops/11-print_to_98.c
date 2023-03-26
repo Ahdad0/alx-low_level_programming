@@ -6,11 +6,12 @@
  */
 void print_to_98(int n)
 {
-	int a, b;
+	int a = n;
+	int b = n;
 
 	if (n == 98)
 	{
-		printf("%d", n);
+		printf("%d\n", n);
 	}
 	if (n > 98)
 	{
@@ -23,6 +24,7 @@ void print_to_98(int n)
 				_putchar(' ');
 			}
 		}
+		_putchar('\n');
 	}
 	else if (n < 98)
 	{
@@ -35,5 +37,6 @@ void print_to_98(int n)
 				_putchar(' ');
 			}
 		}
+		_putchar('\n');
 	}
 }
