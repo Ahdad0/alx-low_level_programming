@@ -10,11 +10,7 @@ void print_to_98(int n)
 	int a = n;
 	int b = n;
 
-	if (n == 98)
-	{
-		printf("%d\n", n);
-	}
-	else if (n >= 98)
+	if (n >= 98)
 	{
 		for (n = a; a >= 98; a--)
 		{
