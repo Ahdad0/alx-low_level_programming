@@ -5,8 +5,9 @@
  */
 int main(void)
 {
-	int i, a = 1, b = 2, next;
+	int i, a = 1, b = 2, next = 0;
 
+	printf("%d, %d, ", a, b);
 	for (i = 3; i <= 98; i++)
 	{
 		next = a + b;
