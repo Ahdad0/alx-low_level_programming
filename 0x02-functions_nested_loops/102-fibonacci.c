@@ -15,9 +15,8 @@ int main(void)
 		first = seconde;
 		seconde = next;
 		if (i == 49)
-		{
 			printf("\n");
-		}
+
 		else
 			printf(", ");
 	}
