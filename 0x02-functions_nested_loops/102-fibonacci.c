@@ -11,7 +11,7 @@ int main(void)
 	for (i = 0; i < 50; i++)
 	{
 		next = first + seconde;
-		printf("%lu,", next);
+		printf("%lu", next);
 		first = seconde;
 		seconde = next;
 		if (i == 49)
