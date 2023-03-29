@@ -5,14 +5,21 @@
  */
 int main(void)
 {
-	int i, first = 1, seconde = 2, next;
+	int i;
+	unsigned long first = 0, seconde = 1, next;
 
-	for (i = 1; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
-		printf("%d, ", first);
 		next = first + seconde;
+		printf("%lu, ", sum);
 		first = seconde;
 		seconde = next;
+		if (i == 49)
+		{
+			printf("\n");
+		}
+		else
+			printf(", ");
 	}
 	return (0);
 }
