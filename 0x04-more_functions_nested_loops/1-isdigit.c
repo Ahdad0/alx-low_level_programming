@@ -8,7 +8,7 @@ int _isdigit(int c)
 {
 	int u;
 
-	for (u = 0; u <= 9; u++)
+	for (u = '0'; u <= '9'; u++)
 	{
 		if (u == c)
 		{
