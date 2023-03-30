@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 /**
  * main - replace multiple of 3 and 5 with letter
  * Return: 0 always
@@ -22,20 +21,9 @@ int main(void)
 		{
 			printf("Buzz ");
 		}
-		else if (a < 10)
+		else
 		{
-			_putchar(a + '0');
-			_putchar(' ');
-		}
-		else if (a < 100)
-		{
-			_putchar((a / 10) + '0');
-			_putchar((a % 10) + '0');
-			_putchar(' ');
-		}
-		else if (a == 100)
-		{
-			printf("Buzz ");
+			printf("%d ", a);
 		}
 	}
 	_putchar('\n');
