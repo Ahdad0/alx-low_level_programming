@@ -2,6 +2,7 @@
 #include "main.h"
 /**
  * main - replace multiple of 3 and 5 with letter
+ * Return: 0 always
  */
 int main (void)
 {
@@ -65,4 +66,6 @@ int main (void)
 			}
 		}
 	}
+	_putchar('\n');
+	return (0);
 }
