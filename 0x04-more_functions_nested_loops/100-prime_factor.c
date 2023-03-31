@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
- * main - find multiple prime number of a number
+ * main - find the largest prime factore of the number n
  * Return: 0 always
  */
 int main(void)
 {
-	long int a;
 	unsigned long int n = 612852475143;
+	long int i;
 
-	for (a = 2; n < 1; a++)
+	for (i = 2; n > 1; i++)
 	{
-		while (n % a == 0)
+		while (i % n == 0)
 		{
-			printf("%ld\n", a);
-			n = n / a;
+			n /= i;
 		}
 	}
+	printf("%ld\n", i - 1);
 	return (0);
 }
