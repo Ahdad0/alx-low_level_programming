@@ -12,10 +12,9 @@ int main(void)
 	{
 		while (n % a == 0)
 		{
-			printf("%d, ", a);
+			printf("%d\n", a);
 			n = n / a;
 		}
 	}
-	putchar('\n');
 	return (0);
 }
