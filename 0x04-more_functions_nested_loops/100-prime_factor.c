@@ -12,7 +12,7 @@ int main(void)
 	{
 		while (n % a == 0)
 		{
-			printf("%d\n", a);
+			printf("%ld\n", a);
 			n = n / a;
 		}
 	}
