@@ -5,13 +5,14 @@
  */
 int main(void)
 {
-	unsigned long int n = 612852475143, a;
+	int a;
+	unsigned long int n = 612852475143;
 
 	for (a = 2; n < 1; a++)
 	{
 		while (n % a == 0)
 		{
-			printf("%u\n", a);
+			printf("%d\n", a);
 			n = n / a;
 		}
 	}
