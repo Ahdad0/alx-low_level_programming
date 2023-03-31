@@ -5,8 +5,8 @@
  */
 int main(void)
 {
-	int a, b;
-	long long n = 612852475143;
+	int a;
+	unsigned long int n = 612852475143;
 
 	for (a = 2; n < 1; a++)
 	{
@@ -16,5 +16,6 @@ int main(void)
 			n = n / a;
 		}
 	}
+	putchar('\n');
 	return (0);
 }
