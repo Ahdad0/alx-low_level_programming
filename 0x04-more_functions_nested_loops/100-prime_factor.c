@@ -10,9 +10,9 @@ int main(void)
 
 	for (i = 2; n > 1; i++)
 	{
-		while (i % n == 0)
+		while (n % i == 0)
 		{
-			n /= i;
+			n = n / i;
 		}
 	}
 	printf("%ld\n", i - 1);
