@@ -1,24 +1,44 @@
 #include <stdio.h>
 /**
- * main - print first 98 Fibonacci number starting with 1 and 2
+ * main - print first 98 of Fibonacci number
  * Return: 0 always
  */
 int main(void)
 {
-	int i, a = 1, b = 2, next = 0;
+	int count;
+	unsigned long i, j, k;
+	unsigned long m, n, p, carry;
 
-	printf("%d, %d, ", a, b);
-	for (i = 3; i <= 98; i++)
+	count = 0;
+	i = 0;
+	j = 1;
+	for (count = 1; count <= 91; count++)
 	{
-		next = a + b;
-		printf("%d", next);
-		if (i != 98)
-		{
-			printf(", ");
-		}
-		a = b;
-		b = next;
+		k = i + j;
+		i = j;
+		j = k;
+		printf("%lu, ", k);
 	}
-	printf("\n");
+	m = i % 1000;
+	i = i / 1000;
+	n = j % 1000;
+	j = j / 1000;
+	while (count <= 98)
+	{
+		carry = (m + n) / 1000;
+		p = (m + n) - carry * 1000;
+		k = (i + j) + carry;
+		m = n;
+		n = p;
+		i = j;
+		j = k;
+		if (p >= 100)
+			printf("%lu%lu", k, p);
+		else
+			printf("%lu0%lu", k, p);
+		if (count != 98)
+			printf(", ");
+		count++
+	}
+	putchar('\n');
 	return (0);
-}
