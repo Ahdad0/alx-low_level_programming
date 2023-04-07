@@ -17,10 +17,6 @@ char *cap_string(char *s)
 	{
 		len++;
 	}
-	if (s[0] >= 'a' && s[0] <= 'z')
-	{
-		s[0] -= 32;
-	}
 	for (i = 1; i < len; i++)
 	{
 		int is_spe = 0;
