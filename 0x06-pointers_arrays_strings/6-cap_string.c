@@ -6,8 +6,13 @@
  */
 char *cap_string(char *s)
 {
-	int i, len = 0, b;
+	int i, len = 0, b, c, len2 = 0;
+	char spe_car[] = {'\n', ',', '\t', '}', '{'};
 
+	while (spe_car[len2] != '\0')
+	{
+		len2++;
+	}
 	while (s[len] != '\0')
 	{
 		len++;
@@ -16,25 +21,24 @@ char *cap_string(char *s)
 	{
 		for (b = 32; b < 64 && b != 54 && b != '-'; b++)
 		{
-			if (s[i] == b || s[i] == '\n' || s[i] == '\t' || s[i] == '.')
+			for (c = 0; c < len2; c++)
 			{
-				if (s[i + 1] <= 122 && s[i + 1] >= 97)
+				if (s[i] == b || s[i] == spe_car[c])
 				{
-					s[i + 1] -= 32;
-				}
-				else if (s[i + 1] == ' ')
-				{
-					if (s[i + 2] <= 90 && s[i + 2] >= 65)
+					if (s[i + 1] <= 122 && s[i + 1] >= 97)
 					{
-						s[i + 2] += 0;
+						s[i + 1] -= 32;
 					}
-					else
+					else if (s[i + 1] == ' ')
 					{
-						s[i + 2] -= 32;
+						if (s[i + 2] <= 90 && s[i + 2] >= 65)
+							s[i + 2] += 0;
+						else
+							s[i + 2] -= 32;
 					}
 				}
-			}
 
+			}
 		}
 	}
 	return (s);
