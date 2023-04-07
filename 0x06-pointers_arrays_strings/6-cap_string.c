@@ -17,23 +17,24 @@ char *cap_string(char *s)
 	{
 		len++;
 	}
+	if (s[0] >= 'a' && s[0] <= 'z')
+	{
+		s[0] -= 32;
+	}
 	for (i = 1; i < len; i++)
 	{
-		int is_spe = 0;
-
 		for (c = 0; c < len2; c++)
 		{
 			if (s[i] == spe_car[c])
 			{
-				if (!is_spe && s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 				{
 					s[i + 1] -= 32;
 				}
-				is_spe = 1;
-			}
-			else
-			{
-				is_spe = 0;
+				else if (s[i + 1] == spe_car[c])
+				{
+					s[i + 2] -= 32;
+				}
 			}
 		}
 	}
