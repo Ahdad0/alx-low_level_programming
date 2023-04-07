@@ -7,7 +7,7 @@
 char *cap_string(char *s)
 {
 	int i, len = 0, b, c, len2 = 0;
-	char spe_car[] = {'\n', ',', '\t', '}', '{'};
+	char spe_car[] = {'\n', ',', '\t', '}', '{', ' ', '.', '"', ';', '!', '?'};
 
 	while (spe_car[len2] != '\0')
 	{
@@ -19,25 +19,25 @@ char *cap_string(char *s)
 	}
 	for (i = 0; i < len; i++)
 	{
-		for (b = 32; b < 64 && b != 54 && b != '-'; b++)
+		for (c = 0; c < len2; c++)
 		{
-			for (c = 0; c < len2; c++)
+			if (s[i] == b || s[i] == spe_car[c])
 			{
-				if (s[i] == b || s[i] == spe_car[c])
+				if (s[i + 1] <= 122 && s[i + 1] >= 97)
 				{
-					if (s[i + 1] <= 122 && s[i + 1] >= 97)
+					s[i + 1] -= 32;
+				}
+				else if (s[i + 1] == ' ')
+				{
+					if (s[i + 2] <= 90 && s[i + 2] >= 65)
 					{
-						s[i + 1] -= 32;
+						s[i + 2] += 0;
 					}
-					else if (s[i + 1] == ' ')
+					else
 					{
-						if (s[i + 2] <= 90 && s[i + 2] >= 65)
-							s[i + 2] += 0;
-						else
-							s[i + 2] -= 32;
+						s[i + 2] -= 32;
 					}
 				}
-
 			}
 		}
 	}
