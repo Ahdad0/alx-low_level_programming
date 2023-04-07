@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * cap_string - capitalize all words of striing.
  * @s: array.
@@ -31,17 +30,6 @@ char *cap_string(char *s)
 				if (s[i + 1] <= 122 && s[i + 1] >= 97)
 				{
 					s[i + 1] -= 32;
-				}
-				else if (s[i + 1] == ' ')
-				{
-					if (s[i + 2] <= 90 && s[i + 2] >= 65)
-					{
-						s[i + 2] += 0;
-					}
-					else
-					{
-						s[i + 2] -= 32;
-					}
 				}
 			}
 		}
