@@ -6,7 +6,7 @@
  */
 char *cap_string(char *s)
 {
-	int i, len = 0, b, c, len2 = 0;
+	int i, len = 0, c, len2 = 0;
 	char spe_car[] = {'\n', ',', '\t', '}', '{', ' ', '.', '"', ';', '!', '?'};
 
 	while (spe_car[len2] != '\0')
@@ -21,7 +21,7 @@ char *cap_string(char *s)
 	{
 		for (c = 0; c < len2; c++)
 		{
-			if (s[i] == b || s[i] == spe_car[c])
+			if (s[i] == spe_car[c])
 			{
 				if (s[i + 1] <= 122 && s[i + 1] >= 97)
 				{
