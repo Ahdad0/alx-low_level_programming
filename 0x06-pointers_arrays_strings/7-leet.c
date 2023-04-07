@@ -6,16 +6,12 @@
  */
 char *leet(char *s)
 {
-	int i, len = 0, c;
+	int i = 0, c;
 	char ch[] = {'a', 'e', 'o', 't', 'l'};
 	char chA[] = {'A', 'E', 'O', 'T', 'L'};
 	int num[] = {'4', '3', '0', '7', '1'};
 
-	while (s[len])
-	{
-		len++;
-	}
-	for (i = 0; i < len; i++)
+	while (s[i])
 	{
 		for (c = 0; c < 5; c++)
 		{
@@ -24,6 +20,7 @@ char *leet(char *s)
 				s[i] = num[c];
 			}
 		}
+		i++;
 	}
 	return (s);
 }
