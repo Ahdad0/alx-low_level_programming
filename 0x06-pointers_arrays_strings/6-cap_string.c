@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * cap_string - capitalize all words of striing.
  * @s: array.
@@ -7,7 +8,7 @@
 char *cap_string(char *s)
 {
 	int i, len = 0, c, len2 = 0;
-	char spe_car[] = {'\n', ',', '\t', '}', '{', ' ', '.', '"', ';', '!', '?'};
+	char spe_car[] = {'\n', '\t', ',', '}', '{', ' ', '.', '"', ';', '!', '?'};
 
 	while (spe_car[len2] != '\0')
 	{
@@ -19,6 +20,10 @@ char *cap_string(char *s)
 	}
 	for (i = 0; i < len; i++)
 	{
+		if (s[i] == '\t')
+		{
+			s[i] = ' ';
+		}
 		for (c = 0; c < len2; c++)
 		{
 			if (s[i] == spe_car[c])
