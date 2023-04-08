@@ -1,18 +1,14 @@
 #include "main.h"
 /**
  * _strchr - locates a character in a string.
- * @s: string.
+ * @s: pointer.
  * @c: character.
- * Return: p or null.
+ * Return: s or null.
  */
 char *_strchr(char *s, char c)
 {
 	int i, len = 0;
 
-	if (s == NULL || *s == '\0')
-	{
-		return (NULL);
-	}
 	while (s[len])
 	{
 		len++;
@@ -21,7 +17,7 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			return (&s[i]);
+			return (s + i);
 		}
 	}
 	return (NULL);
