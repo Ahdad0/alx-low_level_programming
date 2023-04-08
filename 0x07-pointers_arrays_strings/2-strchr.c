@@ -9,6 +9,10 @@ char *_strchr(char *s, char c)
 {
 	int i, len = 0;
 
+	if (*s == '\0')
+	{
+		return (NULL);
+	}
 	while (s[len])
 	{
 		len++;
