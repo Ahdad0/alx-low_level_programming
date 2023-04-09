@@ -23,13 +23,13 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (accept[i] == s[c])
 			{
-				return (s + c);
+				return (s + i);
 			}
 		}
 	}
 	if (accept[i] == s[c])
 	{
-		return (s + c);
+		return (s + i);
 	}
 	return (NULL);
 }
