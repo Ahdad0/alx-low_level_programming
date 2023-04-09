@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _strpbrk - searche a string for any of a set of cha.
  * @s: string to be searched.
@@ -13,7 +14,7 @@ char *_strpbrk(char *s, char *accept)
 	{
 		len++;
 	}
-	while (s[len])
+	while (s[len2])
 	{
 		len2++;
 	}
@@ -23,13 +24,9 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (accept[i] == s[c])
 			{
-				return (s + i);
+				return (s + c);
 			}
 		}
-	}
-	if (accept[i] == s[c])
-	{
-		return (s + i);
 	}
 	return (NULL);
 }
