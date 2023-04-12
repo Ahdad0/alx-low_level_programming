@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 {
 	int i, count = 0, coount = 0, sum = 0;
 
-	if (argc < 2)
+	if (argc <= 2)
 	{
 		printf("Error\n");
 		return (1);
