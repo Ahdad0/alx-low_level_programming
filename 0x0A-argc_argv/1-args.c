@@ -14,5 +14,6 @@ int main(int argc, char *argv[])
 		count += 1;
 	}
 	printf("%d\n", count);
+	(void)argv;
 	return (0);
 }
