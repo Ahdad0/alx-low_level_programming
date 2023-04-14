@@ -3,6 +3,24 @@
 #include <ctype.h>
 
 /**
+ * _isd - function
+ * @s: string
+ * Return: 0 or 1.
+ */
+int _isd(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (!(s[i] >= '0' && s[i] <= '9'))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/**
  * main - adds positive numbers
  * @argc: argument count
  * @argv: argument vector
@@ -19,7 +37,7 @@ int main(int argc, char *argv[])
 	}
 	while (argv[i])
 	{
-		if (!isdigit(argv[i]))
+		if (!_isd(argv[i]))
 		{
 			 printf("Error\n");
 			 return (1);
