@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * _isd - function
@@ -39,8 +38,8 @@ int main(int argc, char *argv[])
 	{
 		if (!_isd(argv[i]))
 		{
-			 printf("Error\n");
-			 return (1);
+			printf("Error\n");
+			return (1);
 		}
 
 		count += atoi(argv[i]);
