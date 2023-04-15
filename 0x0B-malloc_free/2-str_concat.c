@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,7 +23,6 @@ char *str_concat(char *s1, char *s2)
 	s3 = malloc(len3 * sizeof(char));
 
 	if (s3 == NULL)
-		_putchar('');
 		return (0);
 
 	for (i = 0; i < len; i++)
