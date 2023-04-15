@@ -34,5 +34,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		s3[len + u] = s2[u];
 	}
+
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+
 	return (s3);
 }
