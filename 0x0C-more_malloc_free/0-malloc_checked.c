@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 
 /**
  * malloc_checked - function
- * @b: num
- * Return: ar
+ * @b: var
+ * Return: value or void
  */
 void *malloc_checked(unsigned int b)
 {
@@ -13,7 +12,7 @@ void *malloc_checked(unsigned int b)
 
 	ar = malloc(b);
 
-	if (ar == NULL)
+	if (!ar)
 	{
 		exit(98);
 	}
