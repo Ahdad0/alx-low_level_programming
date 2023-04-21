@@ -10,12 +10,11 @@ void *malloc_checked(unsigned int b)
 {
 	void *ar;
 
-	ar = malloc(sizeof(void) * b);
+	ar = malloc(b);
 
 	if (ar == NULL)
 	{
-		printf("98");
-		exit(1);
+		exit(98);
 	}
 
 	return (ar);
