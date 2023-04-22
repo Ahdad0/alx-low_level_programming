@@ -12,17 +12,20 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ar;
-	unsigned int i, o, len = 0, len2 = 0, len3 = 0;
+	unsigned int i, o, len = 0, len2 = 0, len3;
 
 	while (s2[len] != '\0')
 		len++;
 
 	while (s1[len2] != '\0')
 		len2++;
-
+	len++;
 	len3 = len + len2;
 
-	ar = malloc(sizeof(char) * len3);
+	if (n < len)
+		ar = malloc(sizeof(char) * len2 + n + 1);
+	else
+		ar = malloc(sizeof(char) * len3);
 
 	if (!ar)
 		return (NULL);
