@@ -14,6 +14,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ar;
 	unsigned int i, o, len = 0, len2 = 0, len3;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (s2[len] != '\0')
 		len++;
 
@@ -36,16 +40,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= len)
 	{
 		for (o = 0; o < len; o++)
-		{
 			ar[len2 + o] = s2[o];
-		}
 	}
 	else if (n < len)
 	{
 		for (i = 0; i < n; i++)
-		{
 			ar[len2 + i] = s2[i];
-		}
 		ar[len2 + n] = '\0';
 	}
 	return (ar);
