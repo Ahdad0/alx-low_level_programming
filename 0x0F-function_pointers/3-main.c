@@ -11,7 +11,7 @@
 
 int main(int ac, char **av)
 {
-	int a, c;
+	int a, b;
 	char *op;
 	int (*_operation)(int, int);
 
@@ -27,9 +27,9 @@ int main(int ac, char **av)
 		printf("Error\n");
 		exit(99);
 	}
-	c = atoi(av[3]);
+	b = atoi(av[3]);
 	_operation = get_op_func(op);
-	if (!operation)
+	if (!_operation)
 	{
 		printf("Error\n");
 		exit(99);
