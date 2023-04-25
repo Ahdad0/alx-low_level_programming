@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "dog.h"
 
+/**
+ * _strdu - copie string
+ * @s: string
+ * Return: ar or NULL
+ */
 char *_strdu(char *s)
 {
 	int i = 0;
@@ -27,6 +32,13 @@ char *_strdu(char *s)
 	return (ar);
 }
 
+/**
+ * new_dog - function
+ * @name: value
+ * @age: value
+ * @owner: value
+ * Return: NULL or new
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new;
