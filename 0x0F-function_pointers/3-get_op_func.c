@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
+/**
+ *get_op_func - function for the operator
+ *@s: operator
+ *Return: return function
+ */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -14,10 +19,11 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	while (ops[i] == s)
+	i = 0;
+	while (ops[i].op)
 	{
-		return (ops[i]);
-		i++;
+		if (s[0] == ops[i].op[0])
+			return (ops[i].g);
 	}
 
 	return (NULL);
