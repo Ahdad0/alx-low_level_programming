@@ -26,7 +26,7 @@ void print_all(const char * const format, ...)
 					printf("%s%d", separator, va_arg(ap, int));
 					break;
 				case 'c':
-					printf("%s%s", separator, va_arg(ap, char *));
+					printf("%s%c", separator, va_arg(ap, int));
 					break;
 
 				case 's':
