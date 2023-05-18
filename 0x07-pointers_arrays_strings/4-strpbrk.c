@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strpbrk - searche a string for any of a set of cha.
+ * _strpbrk - searched a string for any of a set of cha.
  * @s: string to be searched.
  * @accept: set of cha to search for.
  * Return: s or NULL.
