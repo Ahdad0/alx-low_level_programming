@@ -4,11 +4,11 @@
  * _strspn - gets the length of a prefix substring.
  * @s: string.
  * @accept: set of character.
- * Return: sum of lenght.
+ * Return: sum of length.
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, c, count = 0, len2 = 0, len = 0, lenght = 0;
+	int i, c, count = 0, len2 = 0, len = 0, length = 0;
 
 	while (accept[len])
 	{
@@ -24,15 +24,15 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (accept[i] == s[c])
 			{
-				lenght += 1;
+				length += 1;
 				count += 1;
 			}
 		}
-		if (lenght == 0 || count == 0)
+		if (length == 0 || count == 0)
 		{
-			return (lenght);
+			return (length);
 		}
 		count = 0;
 	}
-	return (lenght);
+	return (length);
 }
