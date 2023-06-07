@@ -8,16 +8,11 @@
  */
 int recur(int n, int i)
 {
-	if (n * n == i)
+	if (i * i == n)
 	{
-		return (n);
+		return (i);
 	}
-	else if (n <= 0)
-	{
-		return (-1);
-	}
-
-	return (recur(n - 1, i));
+	return (recur(n, i + 1));
 }
 
 /**
@@ -27,9 +22,9 @@ int recur(int n, int i)
  */
 int _sqrt_recursion(int n)
 {
-	if (n <= 0)
+	if (n < 0)
 	{
 		return (-1);
 	}
-	return (recur(n, n));
+	return (recur(n, 0));
 }
