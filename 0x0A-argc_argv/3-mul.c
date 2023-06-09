@@ -11,10 +11,6 @@ int main(int argc, char *argv[])
 {
 	int First = 0, Second = 0, result = 0;
 
-	First = atoi(argv[1]);
-	Second = atoi(argv[2]);
-	result = First * Second;
-
 	if (argc < 3)
 	{
 		printf("Error\n");
@@ -22,6 +18,9 @@ int main(int argc, char *argv[])
 	}
 	else if (argc > 2)
 	{
+		First = atoi(argv[1]);
+		Second = atoi(argv[2]);
+		result = First * Second;
 		printf("%d\n", result);
 	}
 	return (0);
