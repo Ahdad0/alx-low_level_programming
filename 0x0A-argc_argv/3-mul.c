@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	long int First, Second, result;
+	long long int First, Second, result;
 
 	First = atoi(argv[1]);
 	Second = atoi(argv[2]);
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 3)
 	{
-		printf("%ld\n", result);
+		printf("%lld\n", result);
 	}
 	else if (argc < 3)
 	{
