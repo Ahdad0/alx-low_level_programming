@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	{
 		printf("%ld\n", result);
 	}
-	else if (argc == 0)
+	else if (argc < 3)
 	{
 		printf("Error\n");
 		return (1);
