@@ -9,14 +9,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int F, S;
+	int First, Second, result;
 
-	F = atoi(argv[1]);
-	S = atoi(argv[2]);
+	First = atoi(argv[1]);
+	Second = atoi(argv[2]);
+	result = First * Second;
 
-	if (argc >= 2)
+	if (argc == 3)
 	{
-		printf("%d\n", F * S);
+		printf("%d\n", result);
 	}
 	else
 	{
