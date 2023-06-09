@@ -9,20 +9,20 @@
  */
 int main(int argc, char *argv[])
 {
-	long long int First, Second, result;
+	int First, Second, result;
 
 	First = atoi(argv[1]);
 	Second = atoi(argv[2]);
 	result = First * Second;
 
-	if (argc == 3)
-	{
-		printf("%lld\n", result);
-	}
-	else if (argc < 3)
+	if (argc < 3)
 	{
 		printf("Error\n");
 		return (1);
+	}
+	else if (argc == 3)
+	{
+		printf("%d\n", result);
 	}
 	return (0);
 }
