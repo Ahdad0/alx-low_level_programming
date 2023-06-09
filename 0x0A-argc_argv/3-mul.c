@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int First, Second, result;
+	int First, Second, result = 0;
 
 	First = atoi(argv[1]);
 	Second = atoi(argv[2]);
