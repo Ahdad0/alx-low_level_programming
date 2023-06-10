@@ -1,6 +1,23 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <stdlib.h>
+
+/**
+ * _isdi - function
+ * @s: string
+ * Return: 0 or 1
+ */
+int _isdi(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (!(s[i] >= '0' && s[i] <= '9'))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 /**
  * main - adds positive numbers.
@@ -10,7 +27,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, j, count = 0;
+	int i, count = 0;
 
 	if (argc == 1)
 	{
@@ -20,17 +37,14 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			for (j = 0; argv[i][j] != '\0'; j++)
+			if (!_isdi(argv[i]))
 			{
-				if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
-				{
-					printf("Error\n");
-					return (1);
-				}
-				else
-				{
-					count += atoi(argv[i]);
-				}
+				printf("Error\n");
+				return (1);
+			}
+			else
+			{
+				count += atoi(argv[i]);
 			}
 		}
 		printf("%d\n", count);
