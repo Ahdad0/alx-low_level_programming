@@ -11,20 +11,21 @@ char *_strdup(char *str)
 	char *p;
 	int len = 0, i;
 
-	while (str[len])
-	{
-		len++;
-	}
-
-	len++;
-
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
+		while (str[len])
+		{
+			len++;
+		}
+
+		len++;
+
 		p = malloc(sizeof(char) * len);
+
 		if (p == NULL)
 		{
 			return (NULL);
