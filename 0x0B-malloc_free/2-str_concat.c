@@ -14,11 +14,11 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 	{
-		s1 = " ";
+		s1 = "";
 	}
-	else if (s2 == NULL)
+	if (s2 == NULL)
 	{
-		s2 = " ";
+		s2 = "";
 	}
 
 	while (s1[len])
@@ -47,4 +47,38 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	return (p);
+}
+
+int main(void)
+{
+	char *s;
+
+	s = str_concat("Hello", NULL);
+	if (s == NULL)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	printf("%s\n", s);
+	free(s);
+
+	s = str_concat(NULL, "Hello");
+	if (s == NULL)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	printf("%s\n", s);
+	free(s);
+
+	s = str_concat(NULL, NULL);
+	if (s == NULL)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	printf("%s\n", s);
+	free(s);
+
+	return (0);
 }
