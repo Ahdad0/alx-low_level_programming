@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * **alloc_grid - function that return pointer to a 2 dimensional array
- * @width: width
- * @height: height
- * Return: NULL or p
+ * alloc_grid - return a point to a 2 dimensional array
+ * @width: columns
+ * @height: row
+ * Return: NULL or arr
  */
 int **alloc_grid(int width, int height)
 {
@@ -15,26 +15,27 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-	else
+
+	p = malloc(height * sizeof(int *));
+	if (p == NULL)
+		return (NULL);
+
+	for (i = 0; i < height; i++)
 	{
-		p = malloc(sizeof(int) * height);
-		if (p == NULL)
+		p[i] = malloc(width * sizeof(int));
+		if (p[i] == NULL)
 		{
+			for (j = 0; j <= i; j++)
+			{
+				free(p[j]);
+			}
+			free(p);
 			return (NULL);
 		}
 
-		for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
 		{
-			p[i] = malloc(sizeof(int) * width);
-
-			if (p[i] == NULL)
-			{
-				return (NULL);
-			}
-			for (j = 0; j < width; j++)
-			{
-				p[i][j] = 0;
-			}
+			p[i][j] = 0;
 		}
 	}
 	return (p);
