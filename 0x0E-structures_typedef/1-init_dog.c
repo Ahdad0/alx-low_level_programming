@@ -2,11 +2,11 @@
 #include "dog.h"
 
 /**
- * init_dog - function that initialize a variable
- * @d: dog
- * @name: name
- * @age: age
- * @owner: owner
+ * init_dog - init a struct
+ * @d: struct
+ * @name: value
+ * @age: value
+ * @owner: value
  * Return: void
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
