@@ -10,38 +10,23 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *dup;
 	size_t count = 0;
 
-	dup = malloc(sizeof(list_t));
-
-	dup->str = "(nil)";
-	dup->len = 0;
-
-	if (h->str == NULL)
+	while (h != NULL)
 	{
-		printf("[%d] %s\n", dup->len, dup->str);
-		count++;
-	}
-	else if (h->str != NULL)
-	{
-		printf("[%d] %s\n", h->len, h->str);
-		count++;
-	}
+		if (h->str == NULL)
+		{
+			printf("[0] (nil)\n");
+		}
+		else
+		{
+			printf("[%u] %s\n", h->len, h->str);
+		}
 
-	h = h->next;
+		count++;
 
-	if (h->str == NULL)
-	{
-		printf("[%d] %s\n", dup->len, dup->str);
-		count++;
-	}
-	else if (h->str != NULL)
-	{
-		printf("[%d] %s\n", h->len, h->str);
-		count++;
+		h = h->next;
 	}
 
-	free(dup);
 	return (count);
 }
