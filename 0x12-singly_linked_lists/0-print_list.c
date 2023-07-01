@@ -23,7 +23,7 @@ size_t print_list(const list_t *h)
 		printf("[%d] %s\n", dup->len, dup->str);
 		count++;
 	}
-	else
+	else if (h->str != NULL)
 	{
 		printf("[%d] %s\n", h->len, h->str);
 		count++;
@@ -36,7 +36,7 @@ size_t print_list(const list_t *h)
 		printf("[%d] %s\n", dup->len, dup->str);
 		count++;
 	}
-	else
+	else if (h->str != NULL)
 	{
 		printf("[%d] %s\n", h->len, h->str);
 		count++;
