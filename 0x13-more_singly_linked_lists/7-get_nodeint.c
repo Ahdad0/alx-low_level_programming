@@ -1,12 +1,35 @@
 #include "lists.h"
 
 /**
+ * listint_len - return len of the nodes
+ * @h: head
+ *
+ * Return: len
+ */
+size_t listint_len(const listint_t *h)
+{
+	const listint_t *ptr;
+	size_t count = 0;
+
+	ptr = h;
+
+	while (ptr != NULL)
+	{
+		count++;
+		ptr = ptr->next;
+	}
+
+	return (count);
+}
+
+/**
  * get_nodeint_at_index - returns the nth node
  * @head: header
  * @index: num
  *
  * Return: 0
  */
+
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	listint_t *ptr;
@@ -15,15 +38,16 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	ptr = head;
 
+	if (listint_len(head) < index)
+	{
+		return (0);
+	}
+
 	while (i <= index)
 	{
 		if (i == index)
 		{
 			data = ptr->n;
-		}
-		else if (i > index)
-		{
-			return (0);
 		}
 		ptr = ptr->next;
 		i++;
