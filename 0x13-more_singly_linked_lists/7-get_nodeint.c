@@ -42,26 +42,29 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	{
 		return (0);
 	}
-
-	while (i <= index)
+	else
 	{
-		if (i == index)
+		while (i <= index)
 		{
-			data = ptr->n;
+			if (i == index)
+			{
+				data = ptr->n;
+			}
+			ptr = ptr->next;
+			i++;
 		}
-		ptr = ptr->next;
-		i++;
+
+		add = malloc(sizeof(listint_t));
+
+		if (ptr == NULL)
+		{
+			return (NULL);
+		}
+
+		add->n = data;
+		add->next = head;
+		head = add;
+
+		return (add);
 	}
-
-	add = malloc(sizeof(listint_t));
-
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-
-	add->n = data;
-	add->next = head;
-	head = add;
-	return (add);
 }
