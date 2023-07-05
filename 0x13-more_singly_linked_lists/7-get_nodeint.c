@@ -38,9 +38,14 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	ptr = head;
 
-	if ((listint_len(head) < index) || (head == NULL) || (index < 0))
+	if (listint_len(head) < index)
 	{
 		return (0);
+	}
+
+	if (head == NULL)
+	{
+		return (NULL);
 	}
 	else
 	{
