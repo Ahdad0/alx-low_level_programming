@@ -2,7 +2,7 @@
 
 /**
  * binary_to_uint - Converts a binary string to an unsigned int.
- * @b: A pointer to the binary string.
+ * @b: pointer
  *
  * Return: 0 or total
  */
@@ -13,6 +13,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int total;
 
 	total = 0;
+
 	if (b == NULL)
 		return (0);
 
