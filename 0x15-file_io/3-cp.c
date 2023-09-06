@@ -3,12 +3,12 @@
 /**
  * main - entry point c file to another file
  *
- * @argc:arguments number
- * @argv:arguments file to and file from
+ * @arc:arguments number
+ * @arv:arguments file to and file from
  *
  * Return: 0 in succes
  */
-int main(int argc, char **argv)
+int main(int arc, char **arv)
 {
 	int Fl_from, Fl_to;
 	ssize_t Fl_rd = 1024, Fl_wr, close_Fl;
