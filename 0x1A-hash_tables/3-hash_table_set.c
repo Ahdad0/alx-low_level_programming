@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "hash_tables.h"
 
 /**
@@ -11,40 +14,42 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int i;
-	hash_node_t *curr, *new;
+	unsigned long int index;
+	hash_node_t *node;
+	char *dup_value, *dup_key;
 
 	if (!ht || (!key || !(*key)) || !value)
 		return (0);
+	index = key_index((unsigned char *)key, ht->size);
 
-	i = key_index((unsigned char *)key, ht->size);
+	dup_value = strdup(value);
+	if (!dup_value)
+		return (0);
 
-	curr = ht->array[i];
-	while (curr)
+	node = ht->array[index];
+	while (node)
 	{
-		if (strcmp(curr->key, key) == 0)
+		if (!strcmp(node->key, key))
 		{
-			free(curr->value);
-			curr->value = strdup(value);
-			if (curr->value == NULL)
-				return (0);
+			free(node->value);
+			node->value = dup_value;
 			return (1);
 		}
-		curr = curr->next;
+		node = node->next;
 	}
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
 
-	new->key = strdup(key);
-	if (new->key == NULL)
+	dup_key = strdup(key);
+	if (!dup_key)
+	{
+		free(dup_value);
 		return (0);
+	}
 
-	new->value = strdup(value);
-	if (new->value == NULL)
+	node = malloc(sizeof(*node));
+	if (!node)
 		return (0);
-
-	new->next = ht->array[i];
-	ht->array[i] = new;
+	node->key = dup_key, node->value = dup_value;
+	node->next = ht->array[index];
+	ht->array[index] = node;
 	return (1);
 }
