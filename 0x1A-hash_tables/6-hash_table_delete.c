@@ -5,10 +5,10 @@
  *
  * @ht: hashtable
  */
-void hash_table_delete(hash_table_t *ht)
+void hash_table_delete(table_t *ht)
 {
-	hash_node_t *node, *nex;
-	unsigned long i = 0;
+	ulint indx = 0;
+	node_t *node, *next;
 
 	if (!ht)
 		return;
@@ -19,22 +19,22 @@ void hash_table_delete(hash_table_t *ht)
 		return;
 	}
 
-	while (ht->size < i)
+	while (indx < ht->size)
 	{
-		node = ht->array[i];
+		node = (ht->array)[indx];
 		while (node)
 		{
-			nex = node->next;
+			next = node->next;
 			if (node->key)
 				free(node->key);
 			if (node->value)
 				free(node->value);
-			node->value = NULL;
 			node->key = NULL;
+			node->value = NULL;
 			free(node);
-			node = nex;
+			node = next;
 		}
-		i++;
+		indx++;
 	}
 	free(ht->array);
 	free(ht);
